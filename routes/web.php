@@ -15,9 +15,8 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
+Route::post('/ajax', [\App\Http\Controllers\WelcomeController::class, 'vehiclesAjax'])->name('vehicles.ajax');
 
 Auth::routes();
 
