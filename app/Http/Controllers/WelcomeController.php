@@ -32,6 +32,12 @@ class WelcomeController extends Controller
                         });
                     }
                 })
+                ->order(function ($query) {
+                    if (request()->has('sort')) {
+                        if(request('sort') == 'make')
+                        $query->orderBy('make', 'asc');
+                    }
+                })
                 ->toJson();
         }
     }

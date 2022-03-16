@@ -24,10 +24,14 @@
                             </div>
                             <div class="row p-1">
                                 <select id="sort" class="form-control col-md-3">
+                                    <option value="0"> Select Sort </option>
                                     <option value="make"> Sort By Make </option>
                                     <option value="model"> Sort By Model </option>
                                     <option value="property"> Sort By Property </option>
                                 </select>
+                            </div>
+                            <div class="row p-1">
+                                <button class="btn btn-primary" onclick="showColumns()"> Show All Columns </button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -118,5 +122,10 @@
         $('#sort').on('change', function () {
             table.draw();
         })
+
+        function showColumns() {
+            var columns = table.settings().init().columns;
+            console.log(columns);
+        }
     </script>
 @endsection
