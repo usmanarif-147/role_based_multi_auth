@@ -61,6 +61,7 @@
 
 @section('script')
     <script>
+
         var table;
         $(document).ready(function () {
             table = $('#parent_table').DataTable({

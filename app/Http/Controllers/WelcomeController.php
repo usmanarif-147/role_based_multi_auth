@@ -16,6 +16,12 @@ class WelcomeController extends Controller
 
     public function vehiclesAjax(Request $request)
     {
+
+        /**
+         * Important Link for show and hide columns
+         * https://makitweb.com/dynamically-show-hide-columns-in-datatable-ajax-pagination/
+        */
+
         if($request->ajax()) {
             $model = Vehicle::with('property');
             return DataTables::eloquent($model)
