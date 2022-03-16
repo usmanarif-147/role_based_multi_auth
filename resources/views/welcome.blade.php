@@ -2,11 +2,7 @@
 
 @section('css')
     <style>
-        .extra-form {
-            /*position: absolute;*/
-            /*z-index: 9;*/
-            /*right: 240px;*/
-        }
+
     </style>
 @endsection
 @section('content')
@@ -70,6 +66,11 @@
                 ordering: false,
                 searching: false,
                 lengthMenu: [[10, 25, 50, 100, 1000000], [10, 25, 50, 100, "All"]],
+                language: {
+                    "zeroRecords": "No vehicle found.",
+                    "infoEmpty": "No such records available ",
+                    "processing": "Loading. Please wait..."
+                },
                 ajax: {
                     url: "{{route('vehicles.ajax')}}",
                     type: "post",
